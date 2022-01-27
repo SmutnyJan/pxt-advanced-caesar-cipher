@@ -12,5 +12,5 @@ function Desifruj (text: string, posun: number) {
     return konecnyText
 }
 basic.forever(function () {
-    basic.showString("" + (Desifruj("hovq zclal", 7)))
+    basic.showString("" + (Zasifruj("ahoj svete", 7)))
 })
