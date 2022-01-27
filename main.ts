@@ -11,4 +11,4 @@ function Desifruj (text: string, posun: number) {
     return konecnyText
 }
 let konecnyText = ""
-basic.showString("" + (Zasifruj("ahoj svete", 7)))
+basic.showString("" + (Zasifruj("microbit", 5)))
