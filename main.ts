@@ -1,4 +1,3 @@
-let konecnyText = ""
 function Zasifruj (text: string, posun: number) {
     for (let i = 0; i <= text.length - 1; i++) {
         konecnyText = "" + konecnyText + Sifra.Zasifruj(text.charAt(i), posun)
@@ -11,6 +10,5 @@ function Desifruj (text: string, posun: number) {
     }
     return konecnyText
 }
-basic.forever(function () {
-    basic.showString("" + (Zasifruj("ahoj svete", 7)))
-})
+let konecnyText = ""
+basic.showString("" + (Zasifruj("ahoj svete", 7)))
