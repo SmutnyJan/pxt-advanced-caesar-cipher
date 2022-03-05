@@ -17,7 +17,7 @@ namespace Sifra {
      */
     //% block="Zašifruj znak %znak ceasarovou šifrou s posunem %key"
 
-    export function Zasifruj(znak: string, key: number): string {
+    export function zasifruj(znak: string, key: number): string {
         znak = znak.toLowerCase()[0]; //v případě, že dostaneme string, beru první index (nepřišel jsem na to, jak nastavit parametr jako char)
         let indexOfChar = characters.indexOf(znak);
         if (indexOfChar != -1) {
@@ -41,7 +41,7 @@ namespace Sifra {
      * @key Posun
      */
     //% block="Dešifruj znak %znak ceasarovou šifrou s posunem %key"
-    export function Desifruj(znak: string, key: number): string {
+    export function desifruj(znak: string, key: number): string {
         znak = znak.toLowerCase()[0];
         let indexOfChar = characters.indexOf(znak);
         if (indexOfChar != -1) {
