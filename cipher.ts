@@ -16,7 +16,7 @@ namespace Sifra {
      * @znak Znak k zašifrování
      * @key Posun
      */
-    //% block="Zašifruj znak %znak ceasarovou šifrou s posunem %key"
+    //% block="Zašifruj znak %znak ceasarovou šifrou s posunem %posun"
     export function zasifrujZnak(znak: string, posun: number): string {
         znak = znak.toLowerCase()[0];
         let indexZnaku = znaky.indexOf(znak);
@@ -40,7 +40,7 @@ namespace Sifra {
      * @znak Znak k dešifrování
      * @key Posun
      */
-    //% block="Dešifruj znak %znak ceasarovou šifrou s posunem %key"
+    //% block="Dešifruj znak %znak ceasarovou šifrou s posunem %posun"
     export function desifrujZnak(znak: string, posun: number): string {
         znak = znak.toLowerCase()[0];
         let indexZnaku = znaky.indexOf(znak);
