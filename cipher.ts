@@ -3,11 +3,11 @@ namespace Sifra {
     const znaky = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     
     /**
-     * Zašiftuje zadaný znak ceasarovou šifrou s libovolným posunem
+     * Zašiftuje zadaný znak caesarovou šifrou s libovolným posunem
      * @znak Znak k zašifrování
      * @key Posun
      */
-    //% block="Zašifruj znak %znak ceasarovou šifrou s posunem %posun"
+    //% block="Zašifruj znak %znak caesarovou šifrou s posunem %posun"
     export function zasifrujZnak(znak: string, posun: number): string {
         znak = znak.toLowerCase()[0];
         let indexZnaku = znaky.indexOf(znak);
@@ -27,11 +27,11 @@ namespace Sifra {
     }
 
     /**
-     * Dešiftuje zadaný znak ceasarovou šifrou s libovolným posunem
+     * Dešiftuje zadaný znak caesarovou šifrou s libovolným posunem
      * @znak Znak k dešifrování
      * @key Posun
      */
-    //% block="Dešifruj znak %znak ceasarovou šifrou s posunem %posun"
+    //% block="Dešifruj znak %znak caesarovou šifrou s posunem %posun"
     export function desifrujZnak(znak: string, posun: number): string {
         znak = znak.toLowerCase()[0];
         let indexZnaku = znaky.indexOf(znak);
