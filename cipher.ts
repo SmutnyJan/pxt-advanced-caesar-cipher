@@ -1,27 +1,27 @@
 //% weight=100 color=#ff6601 icon="\uf023" block="Šifra"
-namespace Sifra {
-    const znaky = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+namespace cipher {
+    const characters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     
     /**
      * Zašiftuje zadaný znak caesarovou šifrou s libovolným posunem
      * @znak Znak k zašifrování
      * @key Posun
      */
-    //% block="Zašifruj znak %znak caesarovou šifrou s posunem %posun"
-    export function zasifrujZnak(znak: string, posun: number): string {
-        znak = checkCharForDiacritics(znak.toLowerCase()[0])
-        let indexZnaku = znaky.indexOf(znak);
-        if (indexZnaku != -1) {
-            let finalniIndex = indexZnaku + posun;
-            if (finalniIndex >= znaky.length) {
-                finalniIndex = finalniIndex % znaky.length;
-            } else if (finalniIndex < 0) {
+    //% block="Zašifruj znak %character caesarovou šifrou s posunem %key"
+    export function encryptCharacter(character: string, key: number): string {
+        character = checkCharForDiacritics(character.toLowerCase()[0])
+        let indexOfChar = characters.indexOf(character);
+        if (indexOfChar != -1) {
+            let finalIndex = indexOfChar + key;
+            if (finalIndex >= characters.length) {
+                finalIndex = finalIndex % characters.length;
+            } else if (finalIndex < 0) {
 
-                finalniIndex = znaky.length - ((-finalniIndex) % (znaky.length - 1));
+                finalIndex = characters.length - ((-finalIndex) % (characters.length - 1));
             }
-            return znaky[finalniIndex % znaky.length];
+            return characters[finalIndex % characters.length];
         } else {
-            return znak;
+            return character;
         }
 
     }
@@ -31,21 +31,21 @@ namespace Sifra {
      * @znak Znak k dešifrování
      * @key Posun
      */
-    //% block="Dešifruj znak %znak caesarovou šifrou s posunem %posun"
-    export function desifrujZnak(znak: string, posun: number): string {
-        znak = checkCharForDiacritics(znak.toLowerCase()[0])
-        let indexZnaku = znaky.indexOf(znak);
-        if (indexZnaku != -1) {
-            let finalniIndex = indexZnaku - posun;
-            if (finalniIndex >= znaky.length) {
-                finalniIndex = finalniIndex % znaky.length;
-            } else if (finalniIndex < 0) {
+    //% block="Dešifruj znak %character caesarovou šifrou s posunem %key"
+    export function desifrujZnak(character: string, key: number): string {
+        character = checkCharForDiacritics(character.toLowerCase()[0])
+        let indexOfChar = characters.indexOf(character);
+        if (indexOfChar != -1) {
+            let finalIndex = indexOfChar - key;
+            if (finalIndex >= characters.length) {
+                finalIndex = finalIndex % characters.length;
+            } else if (finalIndex < 0) {
 
-                finalniIndex = znaky.length - ((-finalniIndex) % (znaky.length - 1));
+                finalIndex = characters.length - ((-finalIndex) % (characters.length - 1));
             }
-            return znaky[finalniIndex % znaky.length];
+            return characters[finalIndex % characters.length];
         } else {
-            return znak
+            return character
         }
 
     }
