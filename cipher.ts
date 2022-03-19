@@ -32,7 +32,7 @@ namespace cipher {
      * @key Posun
      */
     //% block="Dešifruj znak %character caesarovou šifrou s posunem %key"
-    export function decryptCharacted(character: string, key: number): string {
+    export function decryptCharacter(character: string, key: number): string {
         character = checkCharForDiacritics(character.toLowerCase()[0])
         let indexOfChar = characters.indexOf(character);
         if (indexOfChar != -1) {
